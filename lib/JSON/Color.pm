@@ -13,7 +13,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(encode_json);
 
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 our %theme = (
     start_quote         => BOLD . BRIGHT_GREEN,
@@ -170,7 +170,7 @@ sub _encode {
     } elsif ($ref eq 'JSON::XS::Boolean' || $ref eq 'JSON::PP::Boolean') {
         return _bool($data, $opts);
     } elsif (!$ref) {
-        if (looks_like_number($data) =~ /^(1|4|5|9|12|13|4352|8704)$/o) {
+        if (looks_like_number($data) =~ /^(4|12|4352|8704)$/o) {
             return _number($data, $opts);
         } else {
             return _string($data, $opts);
@@ -211,7 +211,7 @@ JSON::Color - Encode to colored JSON
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -245,6 +245,12 @@ Pretty-print.
 Show line number.
 
 =back
+
+=head1 FAQ
+
+=head2 What about loading?
+
+Use L<JSON>.
 
 =head1 SEE ALSO
 
