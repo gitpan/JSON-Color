@@ -13,7 +13,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(encode_json);
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 our %theme = (
     start_quote         => BOLD . BRIGHT_GREEN,
@@ -30,6 +30,8 @@ our %theme = (
     end_null            => RESET,
     start_object_key    => MAGENTA,
     end_object_key      => RESET,
+    start_object_key_escape => BOLD,
+    end_object_key_escape   => RESET . MAGENTA, # back to object key
 );
 
 my %esc = (
@@ -51,8 +53,8 @@ sub _string {
         $eq  = $theme{end_object_key};
         $ss  = $theme{start_object_key};
         $es  = $theme{end_object_key};
-        $sse = "";
-        $ese = "";
+        $sse = $theme{start_object_key_escape};
+        $ese = $theme{end_object_key_escape};
     } else {
         $sq  = $theme{start_quote};
         $eq  = $theme{end_quote};
@@ -196,7 +198,7 @@ JSON::Color - Encode to colored JSON
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
