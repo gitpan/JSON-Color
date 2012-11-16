@@ -2,7 +2,7 @@ NAME
     JSON::Color - Encode to colored JSON
 
 VERSION
-    version 0.02
+    version 0.03
 
 SYNOPSIS
      use JSON::Color qw(encode_json);
@@ -24,6 +24,10 @@ FUNCTIONS
     *   pretty => BOOL (default: 0)
 
         Pretty-print.
+
+    *   linum => BOOL (default: 0)
+
+        Show line number.
 
 SEE ALSO
     To colorize with HTML, you can try Syntax::Highlight::JSON.
