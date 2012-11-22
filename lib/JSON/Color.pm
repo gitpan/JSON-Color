@@ -13,7 +13,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(encode_json);
 
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 our %theme = (
     start_quote         => BOLD . BRIGHT_GREEN,
@@ -211,7 +211,7 @@ JSON::Color - Encode to colored JSON
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 

@@ -17,12 +17,13 @@ my %module_build_args = (
     "Steven Haryanto <stevenharyanto\@gmail.com>"
   ],
   "dist_name" => "JSON-Color",
-  "dist_version" => "0.04",
+  "dist_version" => "0.05",
   "license" => "perl",
   "module_name" => "JSON::Color",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Term::ANSIColor" => "3.00",
     "perl" => "5.010001"
   },
   "script_files" => []

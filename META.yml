@@ -14,8 +14,9 @@ meta-spec:
   version: 1.4
 name: JSON-Color
 requires:
+  Term::ANSIColor: 3.00
   perl: 5.010001
 resources:
   homepage: http://metacpan.org/dist/JSON-Color
   repository: http://github.com/sharyanto/perl-JSON-Color
-version: 0.04
+version: 0.05
