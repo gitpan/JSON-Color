@@ -1,10 +1,10 @@
 package JSON::Color;
 
-use 5.010;
+use 5.010001;
 use strict;
 use warnings;
 
-use Scalar::Util qw(looks_like_number);
+use Scalar::Util::LooksLikeNumber qw(looks_like_number);
 use Term::ANSIColor qw(:constants);
 
 # PUSHCOLOR and LOCALCOLOR cannot be used, they are functions, not escape codes
@@ -13,7 +13,7 @@ require Exporter;
 our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(encode_json);
 
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 our %theme = (
     start_quote         => BOLD . BRIGHT_GREEN,
@@ -201,9 +201,11 @@ sub encode_json {
 1;
 # ABSTRACT: Encode to colored JSON
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -211,7 +213,7 @@ JSON::Color - Encode to colored JSON
 
 =head1 VERSION
 
-version 0.05
+This document describes version 0.06 of JSON::Color (from Perl distribution JSON-Color), released on 2014-06-30.
 
 =head1 SYNOPSIS
 
@@ -259,16 +261,31 @@ To colorize with HTML, you can try L<Syntax::Highlight::JSON>.
 L<Syntax::SourceHighlight> can also colorize JSON/JavaScript to HTML or ANSI
 escape. It requires the GNU Source-highlight library.
 
+=head1 HOMEPAGE
+
+Please visit the project's homepage at L<https://metacpan.org/release/JSON-Color>.
+
+=head1 SOURCE
+
+Source repository is at L<https://github.com/sharyanto/perl-JSON-Color>.
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website L<https://rt.cpan.org/Public/Dist/Display.html?Name=JSON-Color>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
 =head1 AUTHOR
 
 Steven Haryanto <stevenharyanto@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Steven Haryanto.
+This software is copyright (c) 2014 by Steven Haryanto.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
